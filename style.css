@@ -1,0 +1,156 @@
+/*
+ * Deliberately undesigned, like a plain Notion page: black on white, one grey for secondary text, one column.
+ * Two fonts: Source Serif 4 for quoted material (excerpts and the summaries of what was said),
+ * Inter for everything written in response (classmates' responses, the essay) and for headings.
+ * Hierarchy: title 40 · stage 30 · Excerpts/Responses 22 · entry header 18 · text 16 · small 14.
+ */
+:root {
+	color-scheme: light;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	background: #fff;
+	color: #000;
+	font-family: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.65;
+	-webkit-text-size-adjust: 100%;
+}
+.page {
+	max-width: 708px;
+	margin: 0 auto;
+	padding: 72px 24px 160px;
+}
+h1,
+h2,
+h3,
+h4 {
+	font-weight: 700;
+	text-wrap: balance;
+}
+h1 {
+	font-size: 40px;
+	line-height: 1.15;
+	margin: 0 0 16px;
+}
+h2 {
+	font-size: 30px;
+	line-height: 1.25;
+	margin: 120px 0 4px;
+	scroll-margin-top: 32px;
+}
+h3 {
+	font-size: 22px;
+	line-height: 1.3;
+	margin: 72px 0 32px;
+}
+h2 + h3 {
+	margin-top: 40px;
+}
+h4 {
+	font-size: 18px;
+	line-height: 1.35;
+	font-weight: 600;
+	margin: 0 0 6px;
+}
+p {
+	margin: 0 0 20px;
+}
+.meta,
+.sub {
+	font-size: 14px;
+	line-height: 1.5;
+	color: #6b6b6b;
+}
+.meta.intro {
+	margin-bottom: 56px;
+}
+.sub {
+	margin-bottom: 16px;
+}
+.said,
+blockquote {
+	font-family: 'Source Serif 4', Georgia, serif;
+	font-size: 17px;
+}
+.said,
+.note {
+	color: #6b6b6b;
+	margin-bottom: 12px;
+}
+.said {
+	margin-bottom: 2px;
+}
+a {
+	color: inherit;
+	text-underline-offset: 3px;
+	overflow-wrap: anywhere;
+}
+blockquote {
+	margin: 0 0 16px;
+	padding-left: 16px;
+	border-left: 3px solid #000;
+}
+.entry {
+	margin-bottom: 64px;
+	scroll-margin-top: 32px;
+}
+.entry .credit {
+	margin: 0;
+}
+
+/* Contents above the title, like a book: title, dotted leader, number at the right edge */
+nav {
+	margin-bottom: 0;
+}
+#essay h2 {
+	margin-bottom: 24px;
+}
+nav .contents {
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+nav ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav a {
+	display: flex;
+	align-items: baseline;
+	text-decoration: none;
+	line-height: 2;
+}
+nav a:hover .title {
+	text-decoration: underline;
+}
+nav .leader {
+	flex: 1;
+	min-width: 24px;
+	margin: 0 8px;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #6b6b6b;
+	/* Fill from the right edge, so the dots line up across rows. */
+	direction: rtl;
+}
+nav .leader::before {
+	content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .';
+}
+nav .n {
+	width: 1em;
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+}
+section {
+	scroll-margin-top: 32px;
+}
+/* The source line has no heading of its own, so a jump to it keeps the end of the essay in view above it. */
+#sources {
+	scroll-margin-top: 45vh;
+}
